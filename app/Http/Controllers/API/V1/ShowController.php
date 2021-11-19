@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\API\V1;
 
-use App\Http\Controllers\Controller;
 use App\Models\Show;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\Shows\ShowCollection;
 
 class ShowController extends Controller
 {
@@ -15,9 +16,9 @@ class ShowController extends Controller
      */
     public function index()
     {
-        $shows = Show::with('presenter')->orderBy('id','desc')->get();
+        $shows = Show::with('presenter')->orderBy('id', 'desc')->get();
 
-        return new PresenterCollection($shows);
+        return new ShowCollection($shows);
     }
 
     /**

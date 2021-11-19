@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Resources\Packages;
+namespace App\Http\Resources\Shows;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class PackageCollection extends ResourceCollection
+class ShowCollection extends ResourceCollection
 {
 
-    public $collects = PackageTinyResource::class;
+    public $collects = ShowTinyResource::class;
 
     /**
      * Transform the resource into an array.
