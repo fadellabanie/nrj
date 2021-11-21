@@ -11,7 +11,7 @@ use App\Models\User;
 
 class HomeController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -19,12 +19,20 @@ class HomeController extends Controller
      */
     public function login(Request $request)
     {
-       Member::create([
-        'device_token'=> $request->device_token,
-        'device_id'=> $request->device_id,
-       ]);
+        $member = Member::where([
+            'device_id' => $request->device_id,
+        ])->first();
+
+        if ($member) return $this->errorStatus(__("user is login before"));
+
+        Member::create([
+            'device_token' => $request->device_token,
+            'device_id' => $request->device_id,
+        ]);
+
+        return $this->successStatus(__("login successfully"));
     }
-     /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -36,5 +44,4 @@ class HomeController extends Controller
 
         return $this->respondWithCollection($data);
     }
-
 }

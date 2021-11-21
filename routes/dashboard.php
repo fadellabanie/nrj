@@ -6,7 +6,10 @@ Route::group(['prefix' => 'admin','as' => 'admin.','middleware'=>'auth'], functi
     Route::get('/',[App\Http\Controllers\Dashboard\HomeController::class,'index'])->name('admin');
 
     Route::resource('users', App\Http\Controllers\Dashboard\UserController::class);
-  
+    Route::resource('presenters', App\Http\Controllers\Dashboard\PresenterController::class);
+    Route::resource('shows', App\Http\Controllers\Dashboard\ShowController::class);
+    Route::resource('videos', App\Http\Controllers\Dashboard\VideoController::class);
+   
     Route::resource('notifications', App\Http\Controllers\Dashboard\NotificationController::class);
   
     Route::get('admin',function(){
