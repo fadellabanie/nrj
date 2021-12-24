@@ -15,6 +15,6 @@ Route::group(['prefix' => 'v1'], function () {
     Route::get('home', [HomeController::class, 'home']);
     Route::apiResource('videos', VideoController::class)->only('index');
     Route::apiResource('presenters', PresenterController::class)->only('index');
-    Route::apiResource('shows', ShowController::class)->only('index');
+    Route::apiResource('podcasts', ShowController::class)->only('index');
   
 });

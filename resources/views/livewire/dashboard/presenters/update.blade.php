@@ -6,7 +6,7 @@
             data-bs-target="#kt_account_profile_details" aria-expanded="true"
             aria-controls="kt_account_profile_details">
             <div class="card-title m-0">
-                <h3 class="fw-bolder m-0">{{__("Create User")}}</h3>
+                <h3 class="fw-bolder m-0">{{__("Create Presinter")}}</h3>
             </div>
         </div>
         <div id="kt_account_profile_details" class="collapse show">

@@ -17,5 +17,6 @@ class AppSetting extends Model
         'whats_app', 
         'email',
         'redio_live',
+        'about_us',
     ];
 }

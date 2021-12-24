@@ -1,4 +1,4 @@
-rush-hours-24-from<?php
+<?php
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +23,7 @@ class CreateAppSettingsTable extends Migration
             $table->string('mobile')->nullable();
             $table->string('whats_app')->nullable();
             $table->string('email')->nullable();
+            $table->longText('about_us')->nullable();
             $table->timestamps();
         });
         DB::table('app_settings')->insert([
@@ -33,6 +34,7 @@ class CreateAppSettingsTable extends Migration
             'mobile' => '123123',
             'whats_app' => 'whats_app.com',
             'email' => 'info@ezdeal.com',
+            'about_us' => 'NRJ Radio Egypt. You Can listen to all of your favorite artists, Find all your favorite shows. Share on Facebook your favorite hits. NRJ Egypt 92.1',
         ]);
     }
 

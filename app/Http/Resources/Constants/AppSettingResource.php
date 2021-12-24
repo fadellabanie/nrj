@@ -23,6 +23,7 @@ class AppSettingResource extends JsonResource
             'mobile' => $this->mobile,
             'whats_app' => $this->whats_app,
             'email' => $this->email,
+            'about_us' => $this->about_us,
         ];
     }
 }

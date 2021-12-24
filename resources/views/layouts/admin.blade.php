@@ -3,9 +3,7 @@
 <!--begin::Head-->
 
 <head>
-
 	@include('partials.head')
-
 </head>
 <!--end::Head-->
 <!--begin::Body-->
