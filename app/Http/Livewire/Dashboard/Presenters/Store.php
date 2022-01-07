@@ -15,7 +15,7 @@ class Store extends Component
         'name' => 'required|min:2|max:100',
         'description' => 'required|min:4',
         'priorty' => 'required',
-        'image' => 'required',
+       // 'image' => 'required',
     ];
     public function updated($propertyName)
     {
@@ -26,7 +26,8 @@ class Store extends Component
     {
         $validatedData = $this->validate();
 
-        $validatedData['image'] = ($this->image) ? upload('presenters', $validatedData['image']) : "";
+        $validatedData['image'] = 'ddd';
+       // $validatedData['image'] = ($this->image) ? uploadToPublic('presenters', $validatedData['image']) : "";
 
         Presenter::create($validatedData);
 
