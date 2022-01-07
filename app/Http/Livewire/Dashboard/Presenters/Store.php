@@ -26,7 +26,7 @@ class Store extends Component
     {
         $validatedData = $this->validate();
 
-        $validatedData['image'] = ($this->image) ? uploadToPublic('presenters', $validatedData['image']) : "";
+        $validatedData['image'] = ($this->image) ? upload('presenters', $validatedData['image']) : "";
 
         Presenter::create($validatedData);
 
