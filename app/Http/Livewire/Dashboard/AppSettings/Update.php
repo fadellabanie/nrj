@@ -18,9 +18,11 @@ class Update extends Component
         'appSetting.facebook' => 'required',
         'appSetting.twitter' => 'required',
         'appSetting.instagram' => 'required',
-        'appSetting.snapchat' => 'required',
+        'appSetting.youtube' => 'required',
         'appSetting.whats_app' => 'required',
+        'appSetting.mobile' => 'required',
         'appSetting.email' => 'required|email',
+        'appSetting.about_us' => 'required',
     ];
 
     public function submit()

@@ -20,6 +20,7 @@ class AppSettingResource extends JsonResource
             'facebook' => $this->facebook,
             'twitter' => $this->twitter,
             'instagram' => $this->instagram,
+            'youtube' => $this->youtube,
             'mobile' => $this->mobile,
             'whats_app' => $this->whats_app,
             'email' => $this->email,

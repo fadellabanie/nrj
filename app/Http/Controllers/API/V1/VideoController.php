@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Models\Video;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Videos\VideoCollection;
 
@@ -16,7 +15,7 @@ class VideoController extends Controller
      */
     public function index()
     {
-        $videos = Video::orderByDesc('id')->get();
+        $videos = Video::orderByDesc('id')->paginate(50);
 
         return new VideoCollection($videos);
     }

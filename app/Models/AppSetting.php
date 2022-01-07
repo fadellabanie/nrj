@@ -13,6 +13,7 @@ class AppSetting extends Model
         'facebook', 
         'twitter',
         'instagram', 
+        'youtube', 
         'mobile',
         'whats_app', 
         'email',

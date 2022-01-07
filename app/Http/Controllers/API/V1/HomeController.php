@@ -28,6 +28,8 @@ class HomeController extends Controller
         Member::create([
             'device_token' => $request->device_token,
             'device_id' => $request->device_id,
+            'ip' => $request->ip(),
+            'type' => $request->type,
         ]);
 
         return $this->successStatus(__("login successfully"));

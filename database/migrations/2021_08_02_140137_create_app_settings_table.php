@@ -20,6 +20,7 @@ class CreateAppSettingsTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('youtube')->nullable();
             $table->string('mobile')->nullable();
             $table->string('whats_app')->nullable();
             $table->string('email')->nullable();
@@ -31,9 +32,10 @@ class CreateAppSettingsTable extends Migration
             'facebook' => 'facebook.com',
             'twitter' => 'twitter.com',
             'instagram' => 'instagram.com',
+            'youtube' => 'youtube.com',
             'mobile' => '123123',
             'whats_app' => 'whats_app.com',
-            'email' => 'info@ezdeal.com',
+            'email' => 'info@nrj.com',
             'about_us' => 'NRJ Radio Egypt. You Can listen to all of your favorite artists, Find all your favorite shows. Share on Facebook your favorite hits. NRJ Egypt 92.1',
         ]);
     }

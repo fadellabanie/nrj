@@ -17,6 +17,8 @@ class CreateMembersTable extends Migration
             $table->id();
             $table->text('device_token');
             $table->text('device_id');
+            $table->string('ip');
+            $table->string('type');
             $table->timestamps();
         });
     }

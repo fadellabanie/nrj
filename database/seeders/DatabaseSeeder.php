@@ -7,6 +7,7 @@ use App\Models\Show;
 use App\Models\Task;
 use App\Models\Report;
 use App\Models\Category;
+use App\Models\Member;
 use App\Models\Presenter;
 use App\Models\SubCategory;
 use App\Models\Video;
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
          });
 
          Video::factory(20)->create();
+         Member::factory(50)->create();
 
     }
 }

@@ -16,7 +16,7 @@ class PresenterController extends Controller
      */
     public function index()
     {
-        $presenters = Presenter::orderBy('priorty','desc')->get();
+        $presenters = Presenter::orderBy('priorty','desc')->paginate(50);
 
         return new PresenterCollection($presenters);
     }

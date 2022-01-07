@@ -15,5 +15,15 @@ class HomeController extends Controller
     public function index()
     {
         return view('dashboard.home');
+    } 
+    
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function appSetting()
+    {
+        return view('dashboard.app-settings.index');
     }
 }

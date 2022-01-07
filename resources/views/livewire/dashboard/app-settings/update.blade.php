@@ -53,12 +53,12 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="row mb-6">
-                        <x-label class="required">{{__("Snapchat")}}</x-label>
+                        <x-label class="required">{{__("Youtube")}}</x-label>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-12 fv-row">
-                                    <x-input type="url" field="appSetting.snapchat" wire:model="appSetting.snapchat"
-                                        placeholder="Snapchat" />
+                                    <x-input type="url" field="appSetting.youtube" wire:model="appSetting.youtube"
+                                        placeholder="Youtube" />
                                 </div>
                             </div>
                         </div>
@@ -70,8 +70,21 @@
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-12 fv-row">
-                                    <x-input type="mobile" field="appSetting.whats_app"
+                                    <x-input type="tel" field="appSetting.whats_app"
                                         wire:model="appSetting.whats_app" placeholder="Whats App" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Input group--> 
+                    <!--begin::Input group-->
+                    <div class="row mb-6">
+                        <x-label class="required">{{__("Mobile")}}</x-label>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-lg-12 fv-row">
+                                    <x-input type="tel" field="appSetting.mobile"
+                                        wire:model="appSetting.mobile" placeholder="Mobile" />
                                 </div>
                             </div>
                         </div>
@@ -85,6 +98,22 @@
                                 <div class="col-lg-12 fv-row">
                                     <x-input type="email" field="appSetting.email" wire:model="appSetting.email"
                                         placeholder="Email" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Input group--> 
+                    
+                    <!--begin::Input group-->
+                    <div class="row mb-6">
+                        <x-label class="required">{{__("About Us")}}</x-label>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-lg-12 fv-row">
+                                   
+                                        <textarea class="form-control form-control-l form-control-solid mb-3 mb-l-0" wire:model="appSetting.about_us" field="appSetting.about_us">
+
+                                        </textarea>
                                 </div>
                             </div>
                         </div>

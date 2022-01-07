@@ -9,6 +9,7 @@ Route::group(['prefix' => 'admin','as' => 'admin.','middleware'=>'auth'], functi
     Route::resource('presenters', App\Http\Controllers\Dashboard\PresenterController::class);
     Route::resource('shows', App\Http\Controllers\Dashboard\ShowController::class);
     Route::resource('videos', App\Http\Controllers\Dashboard\VideoController::class);
+    Route::get('app-settings', [App\Http\Controllers\Dashboard\HomeController::class,'appSetting'])->name('app-settings');
    
     Route::resource('notifications', App\Http\Controllers\Dashboard\NotificationController::class);
   

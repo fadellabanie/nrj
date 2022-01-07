@@ -16,7 +16,7 @@ class ShowController extends Controller
      */
     public function index()
     {
-        $shows = Show::with('presenter')->orderBy('id', 'desc')->get();
+        $shows = Show::with('presenter')->orderBy('id', 'desc')->paginate(50);
 
         return new ShowCollection($shows);
     }

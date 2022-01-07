@@ -28,10 +28,7 @@ class Form extends Component
         'title' => 'required_if:type,firebase-notification|min:2|max:150',
         'content' => 'required|min:3|max:1000',
         'user' => 'required',
-
     ];
-
-
 
     public function updated($propertyName)
     {
