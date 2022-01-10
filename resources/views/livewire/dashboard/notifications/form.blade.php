@@ -39,51 +39,6 @@
                         </div>
                     </div>
                     <!--end::Input group-->
-                    <!--begin::Input group-->
-                    <div class="row mb-6">
-                        <x-label>
-                            <span class="required">{{__("Type")}}</span>
-                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
-                                title="Phone number must be active"></i>
-                        </x-label>
-                        <div class="col-lg-8 fv-row" wire:ignore>
-                            <select wire:model="type"  
-                            aria-label="Select a type" data-control="select2"
-                                data-placeholder="Select a type..." id="type" name="type"
-                                class="form-select form-select-solid form-select-lg fw-bold @error('type') is-invalid @enderror">
-                                <option value="sms">{{__("SMS")}}</option>
-                                <option value="firebase-notification">{{__("Notification")}}</option>
-                                <option value="email">{{__("Email")}}</option>
-                            </select>
-                        </div>
-                        <x-error field="type" />
-                    </div>
-                    <!--end::Input group-->
-
-                    <!--begin::Input group-->
-                    <div class="row mb-6">
-                        <x-label>
-                            <span class="required">{{__("Users")}}</span>
-                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
-                                title="Phone number must be active"></i>
-                        </x-label>
-                        <div class="col-lg-8 fv-row" wire:ignore>
-                            <select wire:model="user"
-                            aria-label="Select a user" data-control="select2"
-                                data-placeholder="Select a user..."  id="user" name="user"
-                                class="form-select form-select-solid form-select-lg fw-bold @error('user') is-invalid @enderror">
-                                <option>{{__("Select...")}}</option>
-
-                                @foreach ($members as $member)
-                                <option value="{{$member->id}}">{{$member->name .' -- ' .$member->mobile }}</option>
-                                @endforeach
-
-
-                            </select>
-                        </div>
-                        <x-error field="user" />
-                    </div>
-                    <!--end::Input group-->
                 </div>
                 <!--end::Card body-->
                 <div class="card-footer d-flex justify-content-end py-6 px-9">

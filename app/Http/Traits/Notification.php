@@ -39,9 +39,7 @@ trait Notification
     }
 
     public function sendNotificationToAllUser($users, $title, $message)
-    {
-        $users = User::WhereIn('id', $users)->select('device_token')->get();
-   
+    {   
         foreach ($users as  $user) {
             $this->send($user->device_token, $title, $message);
         }
@@ -60,7 +58,5 @@ trait Notification
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         $result = curl_exec($ch);
         curl_close($ch);
-
-        //echo $result;
     }
 }

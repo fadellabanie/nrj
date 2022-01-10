@@ -19,7 +19,7 @@
                             <tr role="row">
 
                                 <th>{{__("#")}}</th>
-                                <th>{{__("Type")}}</th>
+                                <th>{{__("Sender Admin")}}</th>
                                 <th>{{__("Tilte")}}</th>
                                 <th>{{__("Content")}}</th>
                                 <th>{{__("Regester")}}</th>
@@ -30,7 +30,7 @@
                             <tr wire:loading.class="opacity-50">
                                 <td>{{$loop->iteration}}</td>
 
-                                <td>{{$notification->type}}</td>
+                                <td>{{$notification->user->name}}</td>
                                 <td>{{$notification->title}}</td>
                                 <td>{{$notification->body}}</td>
                                 <td>{{$notification->created_at->format('m-d-Y')}}</td>

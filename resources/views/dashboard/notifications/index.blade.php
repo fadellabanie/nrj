@@ -13,9 +13,7 @@
             </h1>
         </div>
         <div class="d-flex align-items-center py-1">
-            @can('send notifications')
             <a href="{{route('admin.notifications.create')}}" class="btn btn-sm btn-primary">{{__("Send")}}</a>
-            @endcan
         </div>
     </div>
 </div>

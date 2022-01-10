@@ -8,20 +8,13 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
 class NotificationUser extends Model
 {
-    use HasFactory,LogsActivity;
+    use HasFactory;
 
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults()
-        ->logOnly(['*']);
-    }
 
     protected $fillable = [
         'user_id',
         'title',
         'body',
-        'type',
-        'stats',
     ];
 
     public function user()

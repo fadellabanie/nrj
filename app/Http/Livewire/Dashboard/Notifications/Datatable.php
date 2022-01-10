@@ -11,16 +11,15 @@ class Datatable extends Component
 {
     use WithPagination;
     use AuthorizesRequests;
-    use AuthorizesRequests;
 
-    public $count = 10;
+    public $count = 20;
     public $search;
-  
+
     public function render()
     {
-       // $this->authorize('index notifications');
         return view('livewire.dashboard.notifications.datatable', [
-            'notifications' => NotificationUser::orderBy('id', 'DESC')->paginate($this->count),
+            'notifications' => NotificationUser::orderBy('id', 'DESC')
+                ->paginate($this->count),
         ]);
     }
 }

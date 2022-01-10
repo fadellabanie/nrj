@@ -2,17 +2,18 @@
 
 namespace App\Jobs;
 
-use App\Http\Traits\Notification;
+use Log;
+use App\Models\Member;
+use App\Models\RealEstate;
 use Illuminate\Bus\Queueable;
+use App\Http\Traits\Notification;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
-use App\Models\RealEstate;
-use Log;
 
-class NotifyUnActiveRealEstate implements ShouldQueue
+class SendQueuedNotifications implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, Notification;
 
@@ -32,9 +33,8 @@ class NotifyUnActiveRealEstate implements ShouldQueue
      */
     public function handle()
     {
-        $users = RealEstate::with('user')->active()
-            ->pluck('user_id');
+        $members =  Member::select('device_token', 'id')->get();
 
-        $this->sendNotificationToAllUser($users, $this->title, $this->body);
+        $this->sendNotificationToAllUser($members, $this->title, $this->body);
     }
 }
