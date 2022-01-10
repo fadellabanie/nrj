@@ -11,6 +11,7 @@ class Datatable extends Component
 {
     use WithPagination;
     use AuthorizesRequests;
+    protected $paginationTheme = 'bootstrap';
 
     public $count = 20;
     public $search;
