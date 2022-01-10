@@ -18,7 +18,7 @@ class Datatable extends Component
     public function render()
     {
         return view('livewire.dashboard.notifications.datatable', [
-            'notifications' => NotificationUser::orderBy('id', 'DESC')
+            'notifications' => NotificationUser::with('user')->orderBy('id', 'DESC')
                 ->paginate($this->count),
         ]);
     }
