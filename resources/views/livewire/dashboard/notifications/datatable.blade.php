@@ -30,7 +30,7 @@
                             <tr wire:loading.class="opacity-50">
                                 <td>{{$loop->iteration}}</td>
 
-                                <td>{{$notification->user->name}}</td>
+                                <td>{{$notification->user->name ?? "admin"}}</td>
                                 <td>{{$notification->title}}</td>
                                 <td>{{$notification->body}}</td>
                                 <td>{{$notification->created_at->format('m-d-Y')}}</td>
