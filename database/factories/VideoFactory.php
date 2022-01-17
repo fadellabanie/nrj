@@ -24,7 +24,7 @@ class VideoFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'url' => $this->faker->imageUrl(),
-            'image' => $this->faker->imageUrl(),       
+            'image' => $this->faker->imageUrl(200,200),   
         ];
         
     }

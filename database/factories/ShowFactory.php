@@ -24,7 +24,7 @@ class ShowFactory extends Factory
         return [
             'title' => $this->faker->name(),
             'description' => $this->faker->sentence(),
-            'image' => $this->faker->imageUrl(),
+            'image' => $this->faker->imageUrl(200,200), 
             'from' => now(),
             'to' => now()->addHours(2),
         ];

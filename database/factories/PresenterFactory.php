@@ -24,7 +24,7 @@ class PresenterFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'description' => $this->faker->sentence(),
-            'image' => $this->faker->imageUrl(),       
+            'image' => $this->faker->imageUrl(200,200),    
             'priorty' => $this->faker->numberBetween(1, 70),
         ];
     }

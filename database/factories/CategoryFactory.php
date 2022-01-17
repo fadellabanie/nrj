@@ -23,7 +23,7 @@ class CategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->word(),
-            'icon' => $this->faker->imageUrl(),            
+            'icon' => $this->faker->imageUrl(200,200),            
         ];
     }
 
