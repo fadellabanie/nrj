@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Models\MusicBasket;
 use App\Models\SubCategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SubCategoryFactory extends Factory
+class MusicBasketFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = SubCategory::class;
+    protected $model = MusicBasket::class;
 
     /**
      * Define the model's default state.

@@ -8,6 +8,7 @@ use App\Models\Task;
 use App\Models\Report;
 use App\Models\Category;
 use App\Models\Member;
+use App\Models\MusicBasket;
 use App\Models\Presenter;
 use App\Models\SubCategory;
 use App\Models\Video;
@@ -24,7 +25,7 @@ class DatabaseSeeder extends Seeder
     {
     
         Category::factory(10)->create()->each(function ($data) {
-            SubCategory::factory($data)->count(5)->create([
+            MusicBasket::factory($data)->count(5)->create([
               'category_id' => $data->id,
             ]);
           });
