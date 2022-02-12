@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('icon');
-            $table->string('raido');
+            $table->string('radio');
             $table->string('url');
             $table->timestamps();
         });
