@@ -16,13 +16,13 @@ class CategoryResource extends JsonResource
      */
     public function toArray($request)
     {
-        $musicBaskets = MusicBasket::where('category_id',$this->id)->first();
-      //  dd($musicBaskets);
+ 
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'raido' => $this->raido,
+            'url' => $this->url,
             'icon' => asset($this->icon),
-            'radio' => new MusicBasketTinyResource($musicBaskets) ?? "",
         ];
     }
 }

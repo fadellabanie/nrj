@@ -24,6 +24,8 @@ class CategoryFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'icon' => $this->faker->imageUrl(200,200),            
+            'radio' => $this->faker->word(),            
+            'url' => $this->faker->url(),            
         ];
     }
 
