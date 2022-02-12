@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Prodcasts\CategoryResource;
 use App\Http\Resources\MusicBaskets\MusicBasketCollection;
+use App\Http\Resources\MusicBaskets\MusicBasketTinyResource;
 
 
 
@@ -33,9 +34,9 @@ class MusicBasketController extends Controller
      */
     public function index(Request $request)
     {
-        $musicBaskets = MusicBasket::where('category_id',$request->category_id)->get();
+        $musicBaskets = MusicBasket::where('category_id',$request->category_id)->first();
 
-        return new MusicBasketCollection($musicBaskets);
+        return new MusicBasketTinyResource($musicBaskets);
     }
 
     /**

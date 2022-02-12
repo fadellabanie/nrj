@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\API\V1;
 
+use App\Models\User;
+use App\Models\Member;
 use App\Models\AppSetting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Constants\AdsResource;
 use App\Http\Resources\Constants\AppSettingResource;
-use App\Models\Member;
-use App\Models\User;
+use App\Models\Ads;
 
 class HomeController extends Controller
 {
@@ -42,7 +44,10 @@ class HomeController extends Controller
     public function home()
     {
         $appSetting = AppSetting::get();
+        $ads = Ads::inRandomOrder()->take(1)->first();
+
         $data['app_setting'] = AppSettingResource::collection($appSetting);
+        $data['ads'] = new AdsResource($ads);
 
         return $this->respondWithCollection($data);
     }

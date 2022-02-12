@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Ads;
 use App\Models\Call;
 use App\Models\Show;
 use App\Models\Task;
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
             ]);
          });
 
+         Ads::factory(20)->create();
          Video::factory(20)->create();
          Member::factory(50)->create();
 

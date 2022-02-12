@@ -4,7 +4,7 @@ namespace App\Http\Resources\Constants;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ImageResource extends JsonResource
+class AdsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,7 +17,8 @@ class ImageResource extends JsonResource
        
         return [
             'id' => $this->id,
-            'file' => asset($this->image),
+            'title' => $this->title,
+            'body' => $this->body,
         ];
     }
 }
