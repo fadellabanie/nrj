@@ -14,7 +14,7 @@
         </div>
         <div class="d-flex align-items-center py-1">
           
-            <a href="#" class="btn btn-sm btn-primary">{{__("Refresh")}}</a>
+            <a href="{{route('admin.admin')}}" class="btn btn-sm btn-primary">{{__("Refresh")}}</a>
         </div>
     </div>
 </div>
