@@ -6,7 +6,7 @@
             data-bs-target="#kt_account_profile_details" aria-expanded="true"
             aria-controls="kt_account_profile_details">
             <div class="card-title m-0">
-                <h3 class="fw-bolder m-0">{{__("Create Show")}}</h3>
+                <h3 class="fw-bolder m-0">{{ __('Create Show') }}</h3>
             </div>
         </div>
         <div id="kt_account_profile_details" class="collapse show">
@@ -14,7 +14,7 @@
                 <div class="card-body border-top p-9">
                     <!--begin::Input group-->
                     <div class="row mb-6">
-                        <x-label class="required">{{__("Title")}}</x-label>
+                        <x-label class="required">{{ __('Title') }}</x-label>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-12 fv-row">
@@ -24,14 +24,15 @@
                         </div>
                     </div>
                     <!--end::Input group-->
-                    
+
                     <!--begin::Input group-->
                     <div class="row mb-6">
-                        <x-label class="required">{{__("Description")}}</x-label>
+                        <x-label class="required">{{ __('Description') }}</x-label>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-12 fv-row">
-                                    <x-input type="text" field="description" wire:model="description" placeholder="description" />
+                                    <x-input type="text" field="description" wire:model="description"
+                                        placeholder="description" />
                                 </div>
                             </div>
                         </div>
@@ -40,7 +41,7 @@
 
                     <!--begin::Input group-->
                     <div class="row mb-6">
-                        <x-label class="required">{{__("From")}}</x-label>
+                        <x-label class="required">{{ __('From') }}</x-label>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-12 fv-row">
@@ -52,7 +53,7 @@
                     <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="row mb-6">
-                        <x-label class="required">{{__("To")}}</x-label>
+                        <x-label class="required">{{ __('To') }}</x-label>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col-lg-12 fv-row">
@@ -62,33 +63,32 @@
                         </div>
                     </div>
                     <!--end::Input group-->
-   <!--begin::Input group-->
-   <div class="row mb-6">
-    <x-label>
-        <span class="required">{{__("Presenter")}}</span>
-        <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
-            title="Phone number must be active"></i>
-    </x-label>
-    <div class="col-lg-8 fv-row">
-        <div wire:ignore>
-            <select wire:model="presenter_id" id="presenter_id" name="presenter_id" data-control="select2"
-                class="form-select form-select-solid form-select-lg fw-bold">
-                <option disable>{{__("Select...")}}</option>
-               @foreach ($presenters as $presenter)
-                   
-               <option value="{{$presenter->id}}">{{$presenter->name}}</option>
-               @endforeach
-               
-            </select>
-        </div>
-        <x-error-select field="presenter_id" />
-    </div>
-</div>
-<!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-6">
+                        <x-label>
+                            <span class="required">{{ __('Presenter') }}</span>
+                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                title="Phone number must be active"></i>
+                        </x-label>
+                        <div class="col-lg-8 fv-row">
+                            <div wire:ignore>
+                                <select wire:model="presenter_id" id="presenter_id" name="presenter_id"
+                                    data-control="select2" class="form-select form-select-solid form-select-lg fw-bold">
+                                    <option disable>{{ __('Select...') }}</option>
+                                    @foreach ($presenters as $presenter)
+                                        <option value="{{ $presenter->id }}">{{ $presenter->name }}</option>
+                                    @endforeach
+
+                                </select>
+                            </div>
+                            <x-error-select field="presenter_id" />
+                        </div>
+                    </div>
+                    <!--end::Input group-->
                     <!--begin::Input group-->
                     <div class="row mb-0">
                         <!--begin::Label-->
-                        <label class="col-lg-4 col-form-label fw-bold fs-6 mt-4">{{__("Avatar")}}</label>
+                        <label class="col-lg-4 col-form-label fw-bold fs-6 mt-4">{{ __('Avatar') }}</label>
                         <!--begin::Label-->
                         <!--begin::Label-->
                         <div class="col-lg-8 d-flex align-items-center">
@@ -126,10 +126,10 @@
                                     <progress max="100" x-bind:value="progress"></progress>
                                 </div>
 
-                                @if($image)
-                                <div class="symbol symbol-750 mt-5">
-                                    <img alt="" src="{{ $image->temporaryUrl() }}" />
-                                </div>
+                                @if ($image)
+                                    <div class="symbol symbol-750 mt-5">
+                                        <img alt="" src="{{ $image->temporaryUrl() }}" />
+                                    </div>
                                 @endif
                             </div>
                         </div>
@@ -139,11 +139,11 @@
                 </div>
                 <!--end::Card body-->
                 <div class="card-footer d-flex justify-content-end py-6 px-9">
-                    <a href="{{route('admin.shows.index')}}"
-                        class="btn btn-light btn-active-light-primary me-2">{{__("Back")}}</a>
+                    <a href="{{ route('admin.shows.index') }}"
+                        class="btn btn-light btn-active-light-primary me-2">{{ __('Back') }}</a>
                     <button type="button" class="btn btn-primary" wire:click.prevent="submit()"
                         wire:loading.attr="disabled"
-                        wire:loading.class="spinner spinner-white spinner-left">{{__("Save")}}</button>
+                        wire:loading.class="spinner spinner-white spinner-left">{{ __('Save') }}</button>
                 </div>
             </form>
         </div>
@@ -151,16 +151,15 @@
 </div>
 
 @section('scripts')
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
 
-    $('#presenter_id').select2({
-        placeholder: 'select..',
-    }).on('change', function () {
-        @this.presenter_id = $(this).val();
-    });
+            $('#presenter_id').select2({
+                placeholder: 'select..',
+            }).on('change', function() {
+                @this.presenter_id = $(this).val();
+            });
 
-});
-
-</script>
+        });
+    </script>
 @endsection

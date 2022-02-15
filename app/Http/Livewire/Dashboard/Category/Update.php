@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Dashboard\Category;
 
+use App\Models\Category;
 use App\Models\Video;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -11,7 +12,7 @@ class Update extends Component
     use WithFileUploads;
 
     public $category;
-    public $image;
+    public $icon;
 
     protected function rules()
     {
@@ -19,14 +20,14 @@ class Update extends Component
             'category.name' => 'required|min:4|max:100',
             'category.radio' => 'required|min:4|max:100',
             'category.url' => 'required|min:4',
-            'image' => 'nullable',
+            'icon' => 'nullable',
         ];
     }
 
     public function updatedIcon()
     {
         $this->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+            'icon' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
     }
 
@@ -44,12 +45,12 @@ class Update extends Component
 
         session()->flash('alert', __('Update Successfully.'));
 
-        return redirect()->route('admin.category.index');
+        return redirect()->route('admin.musice-basket.index');
     }
 
-    public function mount(Video $video)
+    public function mount(Category $category)
     {
-        $this->video = $video;
+        $this->category = $category;
     }
     public function render()
     {

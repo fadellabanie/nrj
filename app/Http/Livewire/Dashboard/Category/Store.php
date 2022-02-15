@@ -11,7 +11,7 @@ class Store extends Component
 {
     use WithFileUploads;
 
-    public $name, $radio, $url,$icon;
+    public $name, $radio, $url, $icon;
     protected $rules = [
         'name' => 'required|min:2|max:100',
         'radio' => 'required|min:2|max:100',
@@ -34,7 +34,8 @@ class Store extends Component
         $this->reset();
 
         session()->flash('alert', __('Saved Successfully.'));
-        return redirect()->route('admin.category.index');
+
+        return redirect()->route('admin.musice-basket.index');
     }
 
     public function resetForm()
