@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Models\Member;
 use App\Models\MusicBasket;
 use App\Models\Presenter;
+use App\Models\Prodcast;
 use App\Models\SubCategory;
 use App\Models\Video;
 use Illuminate\Database\Seeder;
@@ -33,6 +34,9 @@ class DatabaseSeeder extends Seeder
 
         Presenter::factory(20)->create()->each(function($data){
             Show::factory($data)->count(5)->create([
+              'presenter_id' => $data->id,
+            ]);
+            Prodcast::factory($data)->count(5)->create([
               'presenter_id' => $data->id,
             ]);
          });
