@@ -48,7 +48,7 @@ trait Notification
     {
         $data = json_encode($fields);
 
-        $headers = array('Authorization: key=AAAAH5fGJ_E:APA91bGrVKk9OOMQF11b-g_04OMdim6v1WW7dXUCcqmcB-CILcrNTbpJ9hyHb20Bp8no36EMWhA0rFD5C3fDUeOPOLmdzznFkFu1JmNh3lO6WTpoudaM9a3NQE35dTOHnC7F0ZmhOzUF', 'Content-Type: application/json');
+        $headers = array('Authorization: key=AAAA1rzU6Yw:APA91bEPGqL4Mn3sMSQqaQgtVLaPYJ2XTdjOGy6B5efW9RpcAf-UkjqytaaQlqVm-3My7wH__b2eDKPtyJGNfGn8AScFLisJ-mlKPVDNLBKV9kPQazKt6ofeO6wQIM7_YhnuxxmgGgcT', 'Content-Type: application/json');
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
